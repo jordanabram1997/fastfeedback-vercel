@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useRouter } from "next/router";
 import { Box, FormControl, FormLabel, Input, Button } from "@chakra-ui/core";
 
@@ -40,12 +40,11 @@ const FeedbackPage = ({ initialFeedback }) => {
   const [allFeedback, setAllFeedback] = useState([]);
 
   useEffect(() => {
-    setAllFeedback(initalFeedback);
+    setAllFeedback(initialFeedback);
   }, [initialFeedback]);
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     const newFeedback = {
       author: auth.user.name,
       authorId: auth.user.uid,
@@ -59,6 +58,7 @@ const FeedbackPage = ({ initialFeedback }) => {
     setAllFeedback((currentFeedback) => [newFeedback, ...currentFeedback]);
     createFeedback(newFeedback);
   };
+
   return (
     <Box
       display="flex"

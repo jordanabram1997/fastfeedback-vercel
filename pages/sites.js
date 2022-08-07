@@ -1,6 +1,5 @@
 import React from "react";
 import useSWR from "swr";
-
 import DashboardShell from "@/components/DashboardShell";
 import EmptyState from "@/components/EmptyState";
 import SiteTable from "@/components/SiteTable";
